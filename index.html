@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
-    <title>断情导航官网</title>
+    <title>伤悲导航官网</title>
     <link rel="preload" href="abcd.jpg" as="image" type="image/jpeg">
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #e8e8e8;
-            --secondary: #b8b8b8;
-            --accent: #a855f7;
-            --light: #1f1f1f;
-            --gray: #999999;
-            --light-gray: #121212;
-            --white: #222222;
-            --shadow: rgba(0, 0, 0, 0.4);
-            --border: rgba(255, 255, 255, 0.1);
-            /* 按钮渐变：黑色到紫色 */
-            --btn-color: linear-gradient(135deg, #111111, #7e22ce);
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --gray: #95a5a6;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --border: rgba(0, 0, 0, 0.1);
+            --btn-color: linear-gradient(135deg, #3498db, #2980b9); /* 统一按钮颜色 */
         }
         * {
             margin: 0;
@@ -44,13 +43,13 @@
         @keyframes breathe {
             0%, 100% { 
                 transform: scale(1);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3),
-                            0 0 0 rgba(168, 85, 247, 0.3);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+                            0 0 0 rgba(52, 152, 219, 0.3);
             }
             50% { 
                 transform: scale(1.05);
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5),
-                            0 0 20px rgba(168, 85, 247, 0.5);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15),
+                            0 0 20px rgba(52, 152, 219, 0.5);
             }
         }
         
@@ -84,8 +83,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            /* 页面背景改为纯黑色 */
-            background-color: #000000;
+            background-color: #f8f9fa;
             color: var(--primary);
             line-height: 1.6;
             overflow-y: auto;
@@ -99,7 +97,7 @@
             background: var(--white);
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border);
             overflow: hidden;
             position: relative;
@@ -111,16 +109,15 @@
             left: 0;
             width: 100%;
             height: 4px;
-            /* 顶部渐变改为紫黑 */
-            background: linear-gradient(90deg, #a855f7, #7e22ce);
+            background: linear-gradient(90deg, #3498db, #2980b9);
         }
         /* 公告区域 */
         .announcement {
-            background-color: var(--light-gray);
+            background-color: #f8f9fa;
             border-radius: 12px;
             padding: 16px 20px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid #e9ecef;
             display: flex;
             align-items: center;
             animation: slideUp 0.6s ease-out 0.1s both;
@@ -147,14 +144,14 @@
             height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #222;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--white);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             animation: breathe 3s ease-in-out infinite;
         }
         .avatar:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             animation-play-state: paused;
         }
         /* 时间显示样式 */
@@ -162,9 +159,9 @@
             text-align: center;
             margin-bottom: 25px;
             padding: 15px;
-            background-color: var(--light-gray);
+            background-color: #f8f9fa;
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid #e9ecef;
             animation: slideUp 0.6s ease-out 0.2s both;
         }
         .time-label {
@@ -186,7 +183,7 @@
             font-weight: 700;
             color: var(--primary);
             line-height: 1.2;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             font-variant-numeric: tabular-nums; /* 确保数字等宽 */
         }
@@ -194,7 +191,7 @@
             display: inline-block;
             min-width: 0.6em; /* 为数字提供基本宽度 */
             text-align: center;
-            background: linear-gradient(to bottom, #e8e8e8, #b8b8b8);
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -202,7 +199,7 @@
         .time-separator {
             margin: 0 2px;
             opacity: 0.8;
-            color: #a855f7;
+            color: #3498db;
         }
         .date-display {
             font-size: 0.9em;
@@ -234,14 +231,14 @@
             cursor: pointer;
             color: var(--white);
             background: var(--btn-color);
-            box-shadow: 0 4px 12px rgba(126, 34, 206, 0.25);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
             /* 新增边框效果 */
             border: 2px solid transparent;
             background-clip: padding-box;
             position: relative;
             z-index: 1;
         }
-        /* 边框渐变效果 改为紫黑渐变 */
+        /* 边框渐变效果 */
         .btn::before {
             content: '';
             position: absolute;
@@ -249,7 +246,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(135deg, #111111, #a855f7, #7e22ce);
+            background: linear-gradient(135deg, #3498db, #2980b9, #1c5a7a);
             border-radius: 14px; /* 比按钮圆角大2px */
             z-index: -1;
             opacity: 0.8;
@@ -257,7 +254,7 @@
         }
         .btn:hover::before {
             opacity: 1;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+            box-shadow: 0 0 15px rgba(52, 152, 219, 0.6);
         }
         .btn::after {
             content: '';
@@ -272,14 +269,14 @@
         }
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.4);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
         }
         .btn:hover::after {
             opacity: 1;
         }
         .btn:active {
             transform: translateY(0);
-            box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
         }
         .icon {
             font-size: 1.1em;
@@ -288,7 +285,7 @@
         .permanent-url {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid #e9ecef;
             font-size: 0.9em;
             color: var(--gray);
         }
@@ -310,7 +307,7 @@
             transition: width 0.2s ease;
         }
         .clean-link:hover {
-            color: #c084fc;
+            color: #2980b9;
         }
         .clean-link:hover::after {
             width: 100%;
@@ -331,7 +328,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -345,7 +342,7 @@
             width: 90%;
             max-width: 380px;
             padding: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             text-align: center;
             animation: fadeIn 0.5s ease-out;
             position: relative;
@@ -358,14 +355,14 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: linear-gradient(90deg, #a855f7, #7e22ce, #4a044e);
+            background: linear-gradient(90deg, #3498db, #2980b9, #1c5a7a);
         }
         .modal-header {
             margin-bottom: 20px;
         }
         .modal-icon {
             font-size: 2.5em;
-            color: #a855f7;
+            color: #3498db;
             margin-bottom: 10px;
         }
         .modal-title {
@@ -383,7 +380,7 @@
             text-align: left;
         }
         .modal-message {
-            background-color: var(--light-gray);
+            background-color: #f8f9fa;
             border-radius: 12px;
             padding: 20px;
             border-left: 4px solid var(--accent);
@@ -396,7 +393,7 @@
             margin-bottom: 0;
         }
         .modal-message strong {
-            color: #a855f7;
+            color: #3498db;
         }
         .modal-actions {
             display: flex;
@@ -418,14 +415,14 @@
             border: none;
             cursor: pointer;
             color: var(--white);
-            background: linear-gradient(135deg, #111111, #7e22ce);
-            box-shadow: 0 4px 12px rgba(126, 34, 206, 0.3);
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
             min-width: 150px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
         .modal-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.4);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
         }
         .modal-btn:active {
             transform: translateY(0);
@@ -535,7 +532,7 @@
                 <div class="modal-icon">
                     <i class="fas fa-exclamation-circle"></i>
                 </div>
-                <h2 class="modal-title">断情数据号提醒您</h2>
+                <h2 class="modal-title">伤悲数据号提醒您</h2>
                 <p class="modal-subtitle">重要通知，请仔细阅读</p>
             </div>
             
@@ -544,8 +541,8 @@
                     <p><strong>1. 购买前请开始录屏，上号失败没视频不售后</strong></p>
                     <p>所以为确保您的权益，建议在购买前开始录屏，记录整个交易过程。</p>
                     
-                    <p><strong>2. 遇到问题联系快手断情</strong></p>
-                    <p>如果有任何疑问或问题，请联系快手断情。</p>
+                    <p><strong>2. 遇到问题联系快手伤悲</strong></p>
+                    <p>如果有任何疑问或问题，请联系快手伤悲。</p>
                 </div>
             </div>
             
@@ -564,12 +561,12 @@
             <!-- 公告区域 -->
             <div class="announcement">
                 <i class="announcement-icon fas fa-compass"></i>
-                <div class="announcement-text">断情导航官网</div>
+                <div class="announcement-text">伤悲导航官网</div>
             </div>
             
-            <!-- 头像区域 替换为新图片链接 -->
+            <!-- 头像区域 已替换为新链接 -->
             <div class="avatar-container">
-                <img src="https://i.imgs.ovh/2026/07/12/07b36be91b40ac5df37aa1cf1075bde9.webp" alt="断情导航头像" class="avatar" loading="eager">
+                <img src="https://i.imgs.ovh/2026/07/12/51098dd3a22d458753be9cad86be899b.webp" alt="粉止水导航头像" class="avatar" loading="eager">
             </div>
             
             <!-- 北京时间显示 -->
@@ -586,41 +583,41 @@
                 </div>
             </div>
             
-            <!-- 按钮区域 -->
+            <!-- 按钮区域 - 已统一为蓝色并添加边框效果 -->
             <div class="main-buttons">
                 <a href="" class="btn" style="animation-delay: 0.2s;">
                     <i class="icon fas fa-shopping-cart"></i>
-                    断情购买主卡网  未完工
+                    伤悲购买主卡网  暂无
                 </a>
-                <a href="" class="btn" style="animation-delay: 0.3s;">
+                <a href="https://wwbas.lanzouv.com/ixfUS3vzmzah" class="btn" style="animation-delay: 0.3s;">
                     <i class="icon fas fa-download"></i>
-                  上号器下载地址  未完工
+                  上号器下载地（密码sbnb）
                 </a>
-                <a href="" class="btn" style="animation-delay: 0.4s;">
+                <a href="http://hyrz.czqfop.cn/" class="btn" style="animation-delay: 0.4s;">
                     <i class="icon fas fa-search"></i>
-                    点击下载查询器  未完工
+                    点击查询器
                 </a>
                 <!-- 禁玩器地址按钮 -->
-                <a href="" class="btn" style="animation-delay: 0.5s;">
+                <a href="https://wwbas.lanzouv.com/iVHqX3vzp92b" class="btn" style="animation-delay: 0.5s;">
                     <i class="icon fas fa-ban"></i>
-                   下载和平过滤器   未完工
+                   下载和平过滤器（密码sbnb）
                 </a>
                 <a href="" class="btn" style="animation-delay: 0.6s;">
                     <i class="icon fas fa-broadcast-tower"></i>
-              断情主频道  未完工
+              伤悲主频道  暂无
                 </a>
                 <!-- 官方QQ群按钮 -->
                 <a href="" class="btn" style="animation-delay: 0.7s;" target="_blank">
                     <i class="icon fab fa-qq"></i>
-                    官方QQ群点我加入  未完工
+                    官方QQ群，未完工不可点击，自行搜索：637984281
                 </a>
             </div>
             
             <!-- 永久地址 -->
             <div class="permanent-url">
-                永久地址：<a href="" target="_blank" class="clean-link">断情</a>（收藏不迷路）
+                永久地址：<a href="" target="_blank" class="clean-link">伤悲</a>（收藏不迷路）
                 <div class="copyright">
-                    &copy; <span id="current-year">断情</span> - 官方导航
+                    &copy; <span id="current-year">伤悲</span> - 官方导航
                 </div>
             </div>
         </div>
